@@ -4,6 +4,7 @@ import { View, Image, StyleSheet, Animated } from "react-native";
 import * as Font from "expo-font";
 import Home from "../screens/Home";
 import Battery from "../screens/Battery";
+import "react-native-gesture-handler";
 
 const Tab = createBottomTabNavigator();
 
@@ -59,7 +60,7 @@ const Tabs = () => {
         ]}
       >
         <Image
-          source={require("../assets/Splash.png")}
+          source={require("../assets/splash.png")}
           resizeMode="contain"
           style={styles.splashImage}
         />
