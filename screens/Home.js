@@ -36,6 +36,9 @@ const Home = () => {
     return () => unsubscribe();
   }, []);
 
+  const lowerBoxBackgroundColor =
+    predictedVoltage !== null && predictedVoltage < 36 ? "#b11a21" : "#1F9753";
+
   return (
     <View style={styles.container}>
       <View style={styles.upperBox}>
@@ -46,7 +49,9 @@ const Home = () => {
         />
       </View>
 
-      <View style={styles.lowerBox} />
+      <View
+        style={[styles.lowerBox, { backgroundColor: lowerBoxBackgroundColor }]}
+      />
 
       <View style={styles.textContainer}>
         <Text style={styles.VoltagePredict}>
@@ -102,7 +107,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: "50%",
+    height: "65%",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
