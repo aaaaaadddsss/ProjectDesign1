@@ -1,20 +1,19 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
-import "firebase/database";
+import { initializeApp, getApps, getApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDVKqLTNyK8ygxtNmMbnamOKNQ425s1Olo",
-  authDomain: "designproject-362db.firebaseapp.com",
-  projectId: "designproject-362db",
-  storageBucket: "designproject-362db.appspot.com",
-  messagingSenderId: "13804216235",
-  appId: "1:13804216235:web:597f5b987b08b5ba39bcee",
-  measurementId: "G-J11YKEQ4D9",
+  apiKey: "AIzaSyBTnVs5WxylzZDFVZQoUOtnEM_ZhFW6HN8",
+  authDomain: "projectdesign2-6eebb.firebaseapp.com",
+  databaseURL:
+    "https://projectdesign2-6eebb-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "projectdesign2-6eebb",
+  storageBucket: "projectdesign2-6eebb.appspot.com",
+  messagingSenderId: "584023560287",
+  appId: "1:584023560287:web:2ff56e79dd57abf2a9cbea",
+  measurementId: "G-T3MTNDY5TF",
 };
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+// Check if Firebase app is already initialized
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
-export { firebase };
+export const db = getDatabase(app);
